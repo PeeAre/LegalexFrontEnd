@@ -13,14 +13,13 @@ const headers: IHeaderLink[] = [
     link: '/services',
     // sublinks: [
     //   { title: 'Юридические услуги', link: '/legal' },
-    //   { title: 'HR — услуги ', link: '/hr' },
+    //   { title: 'HR — услуги', link: '/hr' },
     //   { title: 'Услуги экономиста', link: '/economy' },
     //   { title: 'Бухгалтерские услуги', link: '/accounting' },
     // ],
   },
   { title: 'О нас', link: '/about' },
   { title: 'Документы', link: '/documents' },
-  { title: 'Контакты', link: '/contacts' },
   { title: 'Связаться с нами', link: '/contactus' },
 ]
 

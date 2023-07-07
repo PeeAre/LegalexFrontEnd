@@ -34,12 +34,10 @@ const About = () => {
       <section id="About" className="flex justify-center px-4 py-16">
         <div className="container">
           <div>
-            <div>
-              <span className="text-xl ml-[0.17rem] text-blue_light">О нас</span>
-              <h3 className="text-6xl">
-                Наша команда <span className="text-blue_light font-medium">экспертов</span>
-              </h3>
-            </div>
+            <span className="text-xl ml-[0.17rem] text-blue_light">О нас</span>
+            <h3 className="text-6xl">
+              Наша команда <span className="text-blue_light font-medium">экспертов</span>
+            </h3>
             <div className="grid grid-cols-5 mt-16">
               {cast.map(({ image, name, job_title }) => {
                 return (

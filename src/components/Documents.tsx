@@ -38,13 +38,11 @@ const Documents = () => {
       >
         <div className="container">
           <div>
-            <div>
-              <span className="text-xl ml-[0.17rem] text-blue_light">Документы</span>
-              <h3 className="text-6xl">
-                Информация для
-                <span className="text-blue_light font-medium"> партнерства </span>с нами
-              </h3>
-            </div>
+            <span className="text-xl ml-[0.17rem] text-blue_light">Документы</span>
+            <h3 className="text-6xl">
+              Информация для
+              <span className="text-blue_light font-medium"> партнерства </span>с нами
+            </h3>
             <div className="grid grid-cols-3 mt-16 gap-8">
               {cast.map(({ link, name, icon }) => {
                 return (
