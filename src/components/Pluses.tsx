@@ -26,16 +26,16 @@ const Pluses = () => {
     <>
       <section
         id="Pluses"
-        className="flex justify-center px-4 py-16 relative bg-dark text-white object-center bg-center bg-cover"
+        className="flex justify-center p-2 lg:px-4 py-8 lg:py-16 relative bg-dark text-white object-center bg-bottom bg-contain bg-no-repeat"
         style={{ backgroundImage: 'url(/images/pluses.png)' }}
       >
         <div className="container">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-4 lg:gap-8">
             {pluses.map((plus) => {
               return (
                 <div
                   key={plus.caption}
-                  className={`flex gap-4 p-8 relative [&_>_div:first-child:before]:hover:h-full [&_>_div:first-child:after]:hover:h-full [&_>_div:first-child_>_div:before]:hover:w-full [&_>_div:first-child_>_div:after]:hover:w-full hover:cursor-default`}
+                  className={`flex gap-4 p-4 lg:p-8 relative [&_>_div:first-child:before]:hover:h-full [&_>_div:first-child:after]:hover:h-full [&_>_div:first-child_>_div:before]:hover:w-full [&_>_div:first-child_>_div:after]:hover:w-full hover:cursor-default`}
                 >
                   <div className="absolute before:transition-all after:transition-all before:duration-300 after:duration-300 top-0 left-0 w-full h-full before:block before:content-[''] before:h-0 before:w-[2px] before:top-0 before:left-0 before:bg-blue_light after:block after:content-[''] after:h-0 after:absolute after:w-[2px] after:top-0 after:right-0 after:bg-blue_light">
                     <div className="absolute before:transition-all after:transition-all before:duration-300 after:duration-300 top-0 left-0 w-full h-full before:block before:content-[''] before:h-[2px] before:w-0 before:top-0 before:left-0 before:bg-blue_light after:block after:content-[''] after:w-0 after:absolute after:h-[2px] after:bottom-0 after:left-0 after:bg-blue_light" />

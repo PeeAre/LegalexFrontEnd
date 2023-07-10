@@ -70,9 +70,9 @@ const Hero = () => {
                   </div>
                   <div className="container h-full">
                     <div className="p-4 relative text-white h-full w-full flex justify-center flex-col">
-                      <h1 className="text-8xl uppercase">LegaLex</h1>
+                      <h1 className="text-6xl md:text-8xl uppercase">LegaLex</h1>
                       <div className="mt-8 flex flex-col gap-4">
-                        <span className="text-6xl">{hero.caption}</span>
+                        <span className="text-4xl md:text-6xl">{hero.caption}</span>
                         <Link
                           to={hero.link}
                           className="mt-4 border-2 border-white px-4 py-3 w-fit text-lg hover:border-blue_light bg-blue_dark/40 transition-all duration-300"

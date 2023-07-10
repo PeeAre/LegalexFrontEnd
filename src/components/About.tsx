@@ -31,14 +31,14 @@ const cast = [
 const About = () => {
   return (
     <>
-      <section id="About" className="flex justify-center px-4 py-16">
+      <section id="About" className="flex justify-center px-4 py-8 lg:py-16">
         <div className="container">
           <div>
-            <span className="text-xl ml-[0.17rem] text-blue_light">О нас</span>
-            <h3 className="text-6xl">
+            <span className="text-lg lg:text-xl lg:ml-[0.17rem] text-blue_light">О нас</span>
+            <h3 className="text-2xl sm:text-4xl lg:text-6xl">
               Наша команда <span className="text-blue_light font-medium">экспертов</span>
             </h3>
-            <div className="grid grid-cols-5 mt-16">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-16">
               {cast.map(({ image, name, job_title }) => {
                 return (
                   <div
