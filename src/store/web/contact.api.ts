@@ -8,10 +8,6 @@ export const contactApi = createApi({
   reducerPath: 'contactApi',
   baseQuery: fetchBaseQuery({
     baseUrl: `https://api.${HOST}/`,
-    prepareHeaders: (headers) => {
-      headers.set("Content-Type", "application/json")
-        return headers
-    },
   }),
 
   endpoints: (builder) => ({
@@ -21,8 +17,7 @@ export const contactApi = createApi({
           url: 'order',
           method: 'POST',
           body: JSON.stringify(body),
-          mode: 'no-cors',
-          referrerPolicy: 'no-referrer-when-downgrade',
+          headers: { 'Content-Type': 'application/json' },
         }
       },
     }),
