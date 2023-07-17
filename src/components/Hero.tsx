@@ -1,9 +1,8 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Navigation, Pagination } from 'swiper'
+import { Autoplay, Pagination } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import 'swiper/css/navigation'
 import { Link } from 'react-router-dom'
 
 const heroes = [
@@ -43,17 +42,18 @@ const Hero = () => {
         <Swiper
           pagination={{
             clickable: true,
+            bulletActiveClass: '!bg-blue_light',
             bulletClass: 'bg-white w-4 h-4 block rounded-full hover:cursor-pointer',
             clickableClass: 'pagination',
           }}
           color={'text-blue_light'}
-          speed={500}
+          speed={1000}
           autoplay={{
-            delay: 4000,
+            delay: 5000,
             disableOnInteraction: false,
           }}
           loop={true}
-          modules={[Pagination, Navigation, Autoplay]}
+          modules={[Pagination, Autoplay]}
           className="relative h-[100vh] [&_.swiper-button-next]:text-blue_light [&_.swiper-button-prev]:text-blue_light"
         >
           {heroes.map((hero) => {

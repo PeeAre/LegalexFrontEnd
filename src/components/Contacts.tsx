@@ -1,4 +1,6 @@
 import React from 'react'
+import { IContactUs } from '../modules/contact'
+import { useSendFeedbackMutation } from '../store/web/contact.api'
 
 const cast = [
   {
@@ -29,13 +31,11 @@ const cast = [
 ]
 
 const Contacts = () => {
+  const [sendFeedback, { isLoading, isError, isSuccess }] = useSendFeedbackMutation()
+
   return (
     <>
       <section id="About" className="flex justify-center px-4 py-8 lg:py-16 relative">
-        <img
-          src="/images/contact1.webp"
-          className="absolute w-full h-full top-0 left-0 -z-[1] grayscale opacity-20 object-cover"
-        />
         <div className="container">
           <div>
             <div>
@@ -69,10 +69,13 @@ const Contacts = () => {
                   </div>
                   <div className="md:text-lg flex flex-col">
                     <span>
-                      <b>Понедельник-пятница:</b><br /> с 9:00 до 18:00, без обеда
+                      <b>Понедельник-пятница:</b>
+                      <br /> с 9:00 до 18:00, без обеда
                     </span>
                     <span>
-                      <b>Выходной: </b><br />суббота, воскресенье
+                      <b>Выходной: </b>
+                      <br />
+                      суббота, воскресенье
                     </span>
                   </div>
                 </div>
@@ -123,11 +126,28 @@ const Contacts = () => {
                   className="grid lg:grid-cols-3 gap-4 lg:gap-8 lg:col-span-3 text-white"
                   onSubmit={(e) => {
                     e.preventDefault()
+
+                    const body: IContactUs = {
+                      //@ts-ignore
+                      name: e.currentTarget.elements.name.value,
+                      //@ts-ignore
+                      phone: e.currentTarget.elements.phone.value,
+                      //@ts-ignore
+                      type: parseInt(e.currentTarget.elements.type.value),
+                      //@ts-ignore
+                      description: e.currentTarget.elements.message.value,
+                    }
+
+                    console.log(JSON.stringify(body))
+
+                    sendFeedback(body)
+                    isSuccess && e.currentTarget.reset()
                   }}
                 >
                   <input
                     placeholder="ФИО"
                     id="name"
+                    name="name"
                     required
                     className="px-1 py-2 md:px-3 md:py-4 border-2 invalid:border-red-400 text-lg border-white hover:border-blue_light bg-blue_light/40 focus-visible:rounded-none focus-visible:border-blue_light !outline-none placeholder:text-white/90"
                   />
@@ -138,17 +158,12 @@ const Contacts = () => {
                     className="px-1 py-2 md:px-3 md:py-4 border-2 invalid:border-red-400 text-lg border-white hover:border-blue_light bg-blue_light/40 focus-visible:rounded-none focus-visible:border-blue_light !outline-none placeholder:text-white/90"
                   />
                   <select
-                    placeholder="Тема"
                     id="type"
                     required
                     className="px-1 py-2 md:px-3 md:py-4 border-2 invalid:border-red-400 text-lg border-white hover:border-blue_light bg-blue_light/40 focus-visible:rounded-none focus-visible:border-blue_light !outline-none placeholder:text-white/90"
                   >
-                    <option value="">Выберите тему обращения</option>
-                    <option value="legal">Юридические услуги</option>
-                    <option value="hr">HR — услуги</option>
-                    <option value="economy">Услуги экономиста</option>
-                    <option value="accounting">Бухгалтерские услуги</option>
-                    <option value="dontnow">Не могу выбрать специалиста</option>
+                    <option value="1">Юридическое лицо</option>
+                    <option value="0">Физическое лицо</option>
                   </select>
                   <textarea
                     placeholder="Опишите вашу проблему"

@@ -26,6 +26,11 @@ const cast = [
     name: 'Правила профессиональной этики лиц, оказывающих юридические услуги',
     icon: '/images/rules.png',
   },
+  {
+    link: '/documents/LegalServicesRules1.pdf',
+    name: 'Политика в области защиты персональных данных',
+    icon: '/images/rules.png',
+  },
 ]
 
 const Documents = () => {
@@ -41,7 +46,7 @@ const Documents = () => {
             <span className="text-xl lg:ml-[0.17rem] text-blue_light">Документы</span>
             <h3 className="text-2xl sm:text-4xl lg:text-6xl">
               Информация для
-              <span className="text-blue_light font-medium"> партнерства </span>с нами
+              <span className="text-blue_light font-medium"> клиентов </span>
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 mt-16 gap-8">
               {cast.map(({ link, name, icon }) => {
