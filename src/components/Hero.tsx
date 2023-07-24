@@ -59,23 +59,23 @@ const Hero = () => {
           {heroes.map((hero) => {
             return (
               <SwiperSlide key={hero.caption}>
-                <div className="relative h-full flex justify-center">
-                  <div className="absolute top-0 left-0 h-full w-full pointer-events-none select-none">
+                <div className="relative flex h-full justify-center">
+                  <div className="pointer-events-none absolute left-0 top-0 h-full w-full select-none">
                     <img
                       src={hero.image}
                       alt="bg"
-                      className="w-full h-full object-cover brightness-50"
+                      className="h-full w-full object-cover brightness-50"
                     />
-                    <div className="absolute top-0 left-0 w-full h-full bg-transparent bg-gradient-to-t" />
+                    <div className="absolute left-0 top-0 h-full w-full bg-transparent bg-gradient-to-t" />
                   </div>
                   <div className="container h-full">
-                    <div className="p-4 relative text-white h-full w-full flex justify-center flex-col">
-                      <h1 className="text-6xl md:text-8xl uppercase">LegaLex</h1>
+                    <div className="relative flex h-full w-full flex-col justify-center p-4 text-white">
+                      <h1 className="text-6xl uppercase md:text-8xl">LegaLex</h1>
                       <div className="mt-8 flex flex-col gap-4">
                         <span className="text-4xl md:text-6xl">{hero.caption}</span>
                         <Link
                           to={hero.link}
-                          className="mt-4 border-2 border-white px-4 py-3 w-fit text-lg hover:border-blue_light bg-blue_dark/40 transition-all duration-300"
+                          className="mt-4 w-fit border-2 border-white bg-blue_dark/40 px-4 py-3 text-lg transition-all duration-300 hover:border-blue_light"
                         >
                           {hero.helpCaption}
                         </Link>

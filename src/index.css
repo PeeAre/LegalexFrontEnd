@@ -21,3 +21,12 @@
 .pagination {
   @apply flex justify-center gap-2;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  pointer-events: none;
+  user-select: none;
+}

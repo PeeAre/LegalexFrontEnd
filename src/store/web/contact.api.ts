@@ -17,7 +17,11 @@ export const contactApi = createApi({
           url: 'order',
           method: 'POST',
           body: JSON.stringify(body),
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Access-control-allow-origin': '*',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            'Access-Control-Allow-Methods': '*',
+          },
         }
       },
     }),

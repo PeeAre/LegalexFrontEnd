@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { IContactUs } from '../modules/contact'
 import { useSendFeedbackMutation } from '../store/web/contact.api'
 
@@ -32,26 +32,27 @@ const cast = [
 
 const Contacts = () => {
   const [sendFeedback, { isLoading, isError, isSuccess }] = useSendFeedbackMutation()
+  const [isLegal, setIsLegal] = useState(true)
 
   return (
     <>
-      <section id="About" className="flex justify-center px-4 py-8 lg:py-16 relative">
+      <section id="ContactUs" className="relative flex justify-center px-4 py-8 lg:py-16">
         <div className="container">
           <div>
             <div>
-              <span className="text-xl lg:ml-[0.17rem] text-blue_light">Обратная связь</span>
+              <span className="text-xl text-blue_light lg:ml-[0.17rem]">Обратная связь</span>
               <h3 className="text-2xl sm:text-4xl lg:text-6xl">
                 Получите персонализированную
-                <span className="text-blue_light font-medium"> поддержку</span> от нашей команды
+                <span className="font-medium text-blue_light"> поддержку</span> от нашей команды
               </h3>
             </div>
             <div className="mt-16">
-              <div className="grid lg:grid-cols-3 gap-4 md:gap-8 lg:gap-16">
-                <div className="flex gap-4 lg:gap-8 lg:justify-center">
-                  <div className="bg-blue_light max-w-[2.5rem] max-h-[2.5rem] min-h-[2.5rem] h-full w-full relative z-[1]">
+              <div className="grid gap-4 md:gap-8 lg:grid-cols-3 lg:gap-12">
+                <div className="flex gap-4 lg:justify-center lg:gap-6">
+                  <div className="relative z-[1] h-full max-h-[2.5rem] min-h-[2.5rem] w-full max-w-[2.5rem] bg-blue_light">
                     <img
                       src={'/images/location.png'}
-                      className="w-6 h-6 absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4"
+                      className="absolute left-2/4 top-2/4 h-6 w-6 -translate-x-2/4 -translate-y-2/4"
                       alt="icon-document"
                     />
                   </div>
@@ -59,15 +60,15 @@ const Contacts = () => {
                     г.Минск, улица Передовая 15, помещение 1, офис 16 Г
                   </span>
                 </div>
-                <div className="flex gap-4 lg:gap-8 lg:justify-center">
-                  <div className="bg-blue_light max-w-[2.5rem] max-h-[2.5rem] min-h-[2.5rem] h-full w-full relative z-[1]">
+                <div className="flex gap-4 lg:justify-center lg:gap-6">
+                  <div className="relative z-[1] h-full max-h-[2.5rem] min-h-[2.5rem] w-full max-w-[2.5rem] bg-blue_light">
                     <img
                       src={'/images/calendar.png'}
-                      className="w-6 h-6 absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4"
+                      className="absolute left-2/4 top-2/4 h-6 w-6 -translate-x-2/4 -translate-y-2/4"
                       alt="icon-document"
                     />
                   </div>
-                  <div className="md:text-lg flex flex-col">
+                  <div className="flex flex-col md:text-lg">
                     <span>
                       <b>Понедельник-пятница:</b>
                       <br /> с 9:00 до 18:00, без обеда
@@ -77,53 +78,51 @@ const Contacts = () => {
                       <br />
                       суббота, воскресенье
                     </span>
+                    <span>
+                      <b>Для клиентов:</b>
+                      <br />
+                      24/7 в мессенджерах
+                    </span>
                   </div>
                 </div>
-                <div className="flex gap-4 lg:gap-8 flex-col">
+                <div className="flex flex-col gap-4 lg:gap-6">
                   <div className="flex gap-4 lg:gap-8">
-                    <div className="bg-blue_light max-w-[2.5rem] max-h-[2.5rem] min-h-[2.5rem] h-full w-full relative z-[1]">
+                    <div className="relative z-[1] h-full max-h-[2.5rem] min-h-[2.5rem] w-full max-w-[2.5rem] bg-blue_light">
                       <img
                         src={'/images/phone.png'}
-                        className="w-6 h-6 absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4"
+                        className="absolute left-2/4 top-2/4 h-6 w-6 -translate-x-2/4 -translate-y-2/4"
                         alt="icon-document"
                       />
                     </div>
                     <span className="md:text-lg">
                       <a
                         href="tel:+375 (44) 790-55-25"
-                        className="hover:underline underline-offset-2"
+                        className="underline-offset-2 hover:underline"
                       >
                         +375 (44) 790-55-25
                       </a>
                     </span>
                   </div>
-                  <div className="flex gap-4 lg:gap-8">
-                    <div className="bg-blue_light max-w-[2.5rem] max-h-[2.5rem] min-h-[2.5rem] h-full w-full relative z-[1]">
+                  <div className="flex gap-4 lg:gap-6">
+                    <div className="relative z-[1] h-full max-h-[2.5rem] min-h-[2.5rem] w-full max-w-[2.5rem] bg-blue_light">
                       <img
                         src={'/images/message.png'}
-                        className="w-6 h-6 absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4"
+                        className="absolute left-2/4 top-2/4 h-6 w-6 -translate-x-2/4 -translate-y-2/4"
                         alt="icon-document"
                       />
                     </div>
                     <span className="md:text-lg">
                       <a
                         href="mailto:office.legalex@gmail.com"
-                        className="hover:underline underline-offset-2"
+                        className="underline-offset-2 hover:underline"
                       >
                         office.legalex@gmail.com
                       </a>
                     </span>
                   </div>
                 </div>
-                <span className="lg:col-span-3 italic text-sm">
-                  Поля отмеченные{' '}
-                  <span className="border border-red-400 px-2 py-1 bg-blue_light/40 text-white">
-                    красной рамкой,
-                  </span>{' '}
-                  обязательны для заполнения
-                </span>
                 <form
-                  className="grid lg:grid-cols-3 gap-4 lg:gap-8 lg:col-span-3 text-white"
+                  className="grid gap-4 text-white lg:col-span-3 lg:grid-cols-4 lg:gap-8"
                   onSubmit={(e) => {
                     e.preventDefault()
 
@@ -138,42 +137,79 @@ const Contacts = () => {
                       description: e.currentTarget.elements.message.value,
                     }
 
-                    console.log(JSON.stringify(body))
-
                     sendFeedback(body)
                     isSuccess && e.currentTarget.reset()
                   }}
                 >
-                  <input
-                    placeholder="ФИО"
-                    id="name"
-                    name="name"
-                    required
-                    className="px-1 py-2 md:px-3 md:py-4 border-2 invalid:border-red-400 text-lg border-white hover:border-blue_light bg-blue_light/40 focus-visible:rounded-none focus-visible:border-blue_light !outline-none placeholder:text-white/90"
-                  />
+                  {isLegal ? (
+                    <input
+                      placeholder="Название юридического лица"
+                      id="name"
+                      name="name"
+                      required
+                      className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
+                    />
+                  ) : (
+                    <input
+                      placeholder="ФИО"
+                      id="name"
+                      name="name"
+                      required
+                      className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
+                    />
+                  )}
                   <input
                     placeholder="Телефон"
                     id="phone"
                     required
-                    className="px-1 py-2 md:px-3 md:py-4 border-2 invalid:border-red-400 text-lg border-white hover:border-blue_light bg-blue_light/40 focus-visible:rounded-none focus-visible:border-blue_light !outline-none placeholder:text-white/90"
+                    className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
                   />
                   <select
                     id="type"
                     required
-                    className="px-1 py-2 md:px-3 md:py-4 border-2 invalid:border-red-400 text-lg border-white hover:border-blue_light bg-blue_light/40 focus-visible:rounded-none focus-visible:border-blue_light !outline-none placeholder:text-white/90"
+                    onChange={(e) => {
+                      setIsLegal(e.currentTarget.selectedIndex == 0 ? true : false)
+                    }}
+                    className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
                   >
                     <option value="1">Юридическое лицо</option>
                     <option value="0">Физическое лицо</option>
+                  </select>
+                  <select
+                    id="type"
+                    required
+                    className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
+                  >
+                    <option value="1">Помощь юриста</option>
+                    <option value="0">Физическое лицо</option>
+                    <option value="1">Помощь юриста</option>
+                    <option value="1">Помощь юриста</option>
+                    <option value="1">Помощь юриста</option>
+                    <option value="1">Помощь юриста</option>
+                    <option value="1">Помощь юриста</option>
                   </select>
                   <textarea
                     placeholder="Опишите вашу проблему"
                     id="message"
                     required
-                    className="lg:col-span-3 px-1 py-2 md:px-3 md:py-4 invalid:border-red-400  border-2 text-lg border-white  hover:border-blue_light bg-blue_light/40 focus-visible:rounded-none focus-visible:border-blue_light !outline-none min-h-[160px] md:min-h-[320px] placeholder:text-white/90"
+                    className="min-h-[160px] border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90  invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:min-h-[320px] md:px-3 md:py-4 lg:col-span-4"
                   />
+                  <div className="flex gap-2 text-black lg:col-span-4">
+                    <input type="checkbox" id="personaldata" name="personaldata" required />
+                    <label htmlFor="personaldata">
+                      Я ознакомлен с{' '}
+                      <a
+                        href="/tuda.pdf"
+                        className="font-bold hover:underline hover:underline-offset-2"
+                      >
+                        Политикой в области обработки персональных данных
+                      </a>{' '}
+                      и даю своё согласие на их обработку
+                    </label>
+                  </div>
                   <button
                     type="submit"
-                    className="border-2 border-white px-1 py-2 md:px-3 md:py-4 w-full text-lg lg:col-span-3 hover:border-blue_light bg-blue_dark/40 transition-all duration-300"
+                    className="w-full border-2 border-white bg-blue_dark/40 px-1 py-2 text-lg transition-all duration-300 hover:border-blue_light md:px-3 md:py-4 lg:col-span-4"
                   >
                     Свяжитесь со мной
                   </button>
