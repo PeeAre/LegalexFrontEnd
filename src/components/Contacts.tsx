@@ -134,6 +134,8 @@ const Contacts = () => {
                       //@ts-ignore
                       type: parseInt(e.currentTarget.elements.type.value),
                       //@ts-ignore
+                      service: parseInt(e.currentTarget.elements.service.value),
+                      //@ts-ignore
                       description: e.currentTarget.elements.message.value,
                     }
 
@@ -176,17 +178,16 @@ const Contacts = () => {
                     <option value="0">Физическое лицо</option>
                   </select>
                   <select
-                    id="type"
+                    id="service"
                     required
                     className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
                   >
-                    <option value="1">Помощь юриста</option>
-                    <option value="0">Физическое лицо</option>
-                    <option value="1">Помощь юриста</option>
-                    <option value="1">Помощь юриста</option>
-                    <option value="1">Помощь юриста</option>
-                    <option value="1">Помощь юриста</option>
-                    <option value="1">Помощь юриста</option>
+                    <option value="0">Не могу выбрать специалиста</option>
+                    <option value="1">Юридические услуги</option>
+                    <option value="2">Услуги экономиста</option>
+                    <option value="3">Бухгалтерские услуги</option>
+                    <option value="4">Услуги специалистра по кадрам</option>
+                    <option value="5">HR - услуги</option>
                   </select>
                   <textarea
                     placeholder="Опишите вашу проблему"

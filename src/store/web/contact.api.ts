@@ -18,9 +18,7 @@ export const contactApi = createApi({
           method: 'POST',
           body: JSON.stringify(body),
           headers: {
-            'Access-control-allow-origin': '*',
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-            'Access-Control-Allow-Methods': '*',
+            "Content-Type": "application/json",
           },
         }
       },
