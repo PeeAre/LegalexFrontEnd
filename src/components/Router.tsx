@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom'
 import General from '../pages/General'
 import Services from '../pages/Services'
 import Header from './Header'
-import Template from './Template'
 
 export interface IRoute {
   Component: any
@@ -33,17 +32,7 @@ const Router = () => {
       <Header />
       <Routes>
         {routes.map(({ title, path, Component }) => {
-          return (
-            <Route
-              key={title + path}
-              path={path}
-              element={
-                <Template>
-                  <Component />
-                </Template>
-              }
-            />
-          )
+          return <Route key={title + path} path={path} element={<Component />} />
         })}
       </Routes>
     </>
