@@ -143,29 +143,6 @@ const Contacts = () => {
                     isSuccess && e.currentTarget.reset()
                   }}
                 >
-                  {isLegal ? (
-                    <input
-                      placeholder="Название юридического лица"
-                      id="name"
-                      name="name"
-                      required
-                      className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
-                    />
-                  ) : (
-                    <input
-                      placeholder="ФИО"
-                      id="name"
-                      name="name"
-                      required
-                      className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
-                    />
-                  )}
-                  <input
-                    placeholder="Телефон"
-                    id="phone"
-                    required
-                    className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
-                  />
                   <select
                     id="type"
                     required
@@ -189,13 +166,37 @@ const Contacts = () => {
                     <option value="4">Услуги специалистра по кадрам</option>
                     <option value="5">HR - услуги</option>
                   </select>
+                  {isLegal ? (
+                    <input
+                      placeholder="Название юридического лица"
+                      id="name"
+                      name="name"
+                      required
+                      className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
+                    />
+                  ) : (
+                    <input
+                      placeholder="Имя"
+                      id="name"
+                      name="name"
+                      required
+                      className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
+                    />
+                  )}
+                  <input
+                    placeholder="Телефон"
+                    id="phone"
+                    required
+                    className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
+                  />
+                  
                   <textarea
                     placeholder="Опишите вашу проблему"
                     id="message"
                     required
                     className="min-h-[160px] border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90  invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:min-h-[320px] md:px-3 md:py-4 lg:col-span-4"
                   />
-                  <div className="flex gap-2 text-black lg:col-span-4">
+                  {!isLegal && <div className="flex gap-2 text-black lg:col-span-4">
                     <input type="checkbox" id="personaldata" name="personaldata" required />
                     <label htmlFor="personaldata">
                       Я ознакомлен с{' '}
@@ -207,7 +208,7 @@ const Contacts = () => {
                       </a>{' '}
                       и даю своё согласие на их обработку
                     </label>
-                  </div>
+                  </div>}
                   <button
                     type="submit"
                     className="w-full border-2 border-white bg-blue_dark/40 px-1 py-2 text-lg transition-all duration-300 hover:border-blue_light md:px-3 md:py-4 lg:col-span-4"
