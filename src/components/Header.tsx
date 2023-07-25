@@ -108,13 +108,13 @@ const Header = () => {
       >
         <div className="container">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+            <Link to={'/'} className="flex items-center gap-4">
               <img src="/images/logo-white.png" alt="Legalex" className="h-14 w-14" />
               <div className="flex flex-col">
                 <span className="text-2xl leading-[1] lg:text-4xl">LegaLex</span>
                 <span className="text-sm lg:text-base">Юридическая фирма</span>
               </div>
-            </div>
+            </Link>
             {resize >= 1024 ? (
               <>
                 <div className="hidden gap-4 text-2xl lg:flex">
