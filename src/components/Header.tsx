@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { isMobile } from 'react-device-detect'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useNavigation } from 'react-router-dom'
+import { useResize } from '../libs/hooks/use-resize'
 
 interface IHeaderLink {
   title: string
@@ -19,9 +19,9 @@ const headers: IHeaderLink[] = [
     //   { title: 'Бухгалтерские услуги', link: '/accounting' },
     // ],
   },
-  { title: 'О нас', link: '#About' },
-  { title: 'Документы', link: '#Documents' },
-  { title: 'Связаться с нами', link: '#ContactUs' },
+  { title: 'О нас', link: '/#About' },
+  { title: 'Документы', link: '/#Documents' },
+  { title: 'Связаться с нами', link: '/#ContactUs' },
 ]
 
 export const handleAnchorLink = (href: string) => {
@@ -31,6 +31,8 @@ export const handleAnchorLink = (href: string) => {
 const Header = () => {
   const [isActiveMenu, setIsActiveMenu] = useState(false)
   const [filling, setFilling] = useState(0)
+  const resize = useResize()
+  const location = useLocation()
 
   useEffect(() => {
     document.onscroll = (event) => {
@@ -113,7 +115,7 @@ const Header = () => {
                 <span className="text-sm lg:text-base">Юридическая фирма</span>
               </div>
             </div>
-            {!isMobile ? (
+            {resize >= 1024 ? (
               <>
                 <div className="hidden gap-4 text-2xl lg:flex">
                   {headers.map((link) => {
@@ -122,7 +124,9 @@ const Header = () => {
                         <Link
                           key={link.title}
                           to={link.link}
-                          onClick={() => handleAnchorLink(link.link)}
+                          onClick={() => {
+                            location.pathname === '/' && handleAnchorLink(link.link)
+                          }}
                           className="border-b-2 border-transparent transition-all hover:border-blue_light"
                         >
                           {link.title}
