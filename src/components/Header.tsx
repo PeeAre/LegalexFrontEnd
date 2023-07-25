@@ -125,7 +125,9 @@ const Header = () => {
                           key={link.title}
                           to={link.link}
                           onClick={() => {
-                            location.pathname === '/' && !link.link.includes('#') && handleAnchorLink(link.link)
+                            location.pathname === '/' &&
+                              link.link.includes('#') &&
+                              handleAnchorLink(link.link)
                           }}
                           className="border-b-2 border-transparent transition-all hover:border-blue_light"
                         >

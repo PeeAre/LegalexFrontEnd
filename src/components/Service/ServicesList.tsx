@@ -1,5 +1,4 @@
 import React from 'react'
-import Hero from '../Hero'
 import ServiceCard from './ServiceCard'
 
 const list = [
@@ -28,8 +27,6 @@ const list = [
 const ServicesList = () => {
   return (
     <>
-      <Hero />
-
       <div className="relative mb-8 mt-8 flex justify-center p-4 md:mt-16">
         <div className="container">
           <span className="text-xl text-blue_light lg:ml-[0.17rem]">Услуги</span>

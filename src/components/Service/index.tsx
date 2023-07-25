@@ -1,6 +1,5 @@
 import { Disclosure } from '@headlessui/react'
 import React from 'react'
-import Hero from '../Hero'
 
 export interface IService {
   id: string
@@ -50,7 +49,6 @@ const legal_list = [
 const Service = ({ content }: { content: IService }) => {
   return (
     <>
-      <Hero />
       <div className="relative mb-8 mt-8 flex justify-center p-4 md:mt-16">
         <div className="container">
           <span className="text-xl text-blue_light lg:ml-[0.17rem]">Юридические услуги</span>
