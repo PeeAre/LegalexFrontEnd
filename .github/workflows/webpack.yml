@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [18.x]
 
     steps:
       - name: Get repository code
@@ -22,8 +22,8 @@ jobs:
       
       - name: Install dependencies
         run: |
+          npm init -y
           npm install
-          npm install react-scripts
 
       - name: Build application
         run: npm run build
