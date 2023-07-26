@@ -1,4 +1,4 @@
-name: CI
+name: Deploy Test application
 
 on:
   push:
@@ -7,20 +7,19 @@ on:
     branches: [ test ]
 
 jobs:
-  build:
-
+  deploy:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [18.x]
-
     steps:
+      - name: Getting repository code
       - uses: actions/checkout@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install dependencies ${{ matrix.node-version }}
+      
+      - name: Installing dependencies
         run: npm ci
         
-      - name: Build application
+      - name: Building application
         run: CI='' npm run build
