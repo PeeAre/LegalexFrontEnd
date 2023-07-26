@@ -13,22 +13,13 @@ jobs:
       matrix:
         node-version: [18.x]
     steps:
-      - name: Getting repository code
-        uses: actions/checkout@v3
+      - name: Clean ReactJS precache-manifest and logs
+        uses: StephanThierry/ftp-delete-action@v2.1
         with:
-          node-version: ${{ matrix.node-version }}
-      
-      - name: Installing dependencies
-        run: npm ci
-        
-      - name: Building application
-        run: CI='' npm run build
-        
-      - name: Deploying application
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.server }}
-          username: ${{ secrets.username }}
+          host: ${{ secrets.server }}
+          user: ${{ secrets.username }}
           password: ${{ secrets.password }}
-          local-dir: ./build/
-          server-dir: dev.legalex.by/
+          workingDir: "~/dev.legalex.by"
+          remoteFiles: "*"
+          remoteDirectories: "*"
+          ignoreSSL: "1"
