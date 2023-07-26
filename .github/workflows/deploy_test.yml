@@ -22,4 +22,4 @@ jobs:
           workingDir: "/dev.legalex.by/"
           remoteFiles: "/dev.legalex.by/*"
           ignoreSSL: "1"
-          options: "rmdir qwe/"
+          options: "rm -r qwe/"
