@@ -1,0 +1,32 @@
+name: DeployTestApplication
+
+on:
+  push:
+    branches: [ test ]
+  pull_request:
+    branches: [ test ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - name: Getting repository code
+        uses: actions/checkout@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      
+      - name: Installing dependencies
+        run: npm ci
+        
+      - name: Building application
+        run: CI='' npm run build
+        
+      - name: Deploying application
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.test_server }}
+          username: ${{ secrets.username }}
+          password: ${{ secrets.password }}
