@@ -19,7 +19,7 @@ jobs:
           host: ${{ secrets.server }}
           user: ${{ secrets.username }}
           password: ${{ secrets.password }}
-          workingDir: "~/dev.legalex.by"
+          workingDir: "/dev.legalex.by"
           remoteFiles: "*"
           remoteDirectories: "*"
           ignoreSSL: "1"
