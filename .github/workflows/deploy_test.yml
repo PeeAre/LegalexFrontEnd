@@ -21,4 +21,5 @@ jobs:
           password: ${{ secrets.password }}
           workingDir: "/dev.legalex.by"
           remoteFiles: "/dev.legalex.by/*"
+          remoteDirectories: "/dev.legalex.by/*"
           ignoreSSL: "1"
