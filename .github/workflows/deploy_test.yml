@@ -19,6 +19,4 @@ jobs:
           user: ${{ secrets.username }}
           password: ${{ secrets.password }}
           remoteDir: "dev.legalex.by"
-          options: "rm -r wwwroot/"
-
-     
+          options: "rmdir qwe/"
