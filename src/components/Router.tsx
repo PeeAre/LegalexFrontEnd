@@ -4,6 +4,7 @@ import General from '../pages/General'
 import Services from '../pages/Services'
 import Header from './Header'
 import Hero from './Hero'
+import Template from './Template'
 
 export interface IRoute {
   Component: any
@@ -34,7 +35,17 @@ const Router = () => {
       <Hero />
       <Routes>
         {routes.map(({ title, path, Component }) => {
-          return <Route key={title + path} path={path} element={<Component />} />
+          return (
+            <Route
+              key={title + path}
+              path={path}
+              element={
+                <Template>
+                  <Component />
+                </Template>
+              }
+            />
+          )
         })}
       </Routes>
     </>

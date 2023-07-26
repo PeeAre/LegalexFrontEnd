@@ -18,7 +18,7 @@ export const contactApi = createApi({
           method: 'POST',
           body: JSON.stringify(body),
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
         }
       },

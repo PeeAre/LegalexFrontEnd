@@ -27,7 +27,7 @@ const cast = [
     icon: '/images/rules.png',
   },
   {
-    link: '/documents/LegalServicesRules1.pdf',
+    link: '/documents/Personal.pdf',
     name: 'Политика в области защиты персональных данных',
     icon: '/images/rules.png',
   },

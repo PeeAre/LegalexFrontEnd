@@ -2,27 +2,27 @@ import React from 'react'
 
 const cast = [
   {
-    image: '/images/cast1.jpg',
+    image: '/images/cast1.webp',
     name: 'Власенков Владислав',
     job_title: 'Директор',
   },
   {
-    image: '/images/cast2.jpg',
+    image: '/images/cast2.webp',
     name: 'Гришкова Ольга',
     job_title: 'Юрисконсульт',
   },
   {
-    image: '/images/cast3.jpg',
+    image: '/images/cast3.webp',
     name: 'Ковалёва Наталья',
     job_title: 'Юрисконсульт 2-ой категории',
   },
   {
-    image: '/images/cast4.jpg',
+    image: '/images/cast4.webp',
     name: 'Прихожая Екатерина',
     job_title: 'HR-менеджер',
   },
   {
-    image: '/images/cast5.jpg',
+    image: '/images/cast5.webp',
     name: 'Строич Мария',
     job_title: 'Ведущий экономист',
   },
@@ -43,7 +43,7 @@ const About = () => {
                 return (
                   <div
                     key={name}
-                    className="relative flex flex-col items-center grayscale transition-all duration-300 hover:grayscale-0"
+                    className="relative flex flex-col items-center transition-all duration-300"
                   >
                     <div className="aspect-[2/3] w-full">
                       <img

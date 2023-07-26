@@ -1,41 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { Link } from 'react-router-dom'
+import Modal from './Modal'
+import Form from './Form'
 
 const heroes = [
   {
-    image: '/images/hero1.jpg',
+    image: '/images/hero1.webp',
     caption: 'Мы здесь, чтобы оказывать вам юридическую помощь и обеспечить вашу уверенность',
     helpCaption: 'Получить помощь юрисконсульта',
-    link: '/',
+    type: 1,
   },
   {
-    image: '/images/hero2.jpg',
+    image: '/images/hero2.webp',
     caption:
       'Мы здесь, чтобы помочь вам подобрать персонал, создавая команду, на которую можно положиться',
     helpCaption: 'Получить помощь HR-менеджера',
-    link: '/',
+    type: 5,
   },
   {
-    image: '/images/hero3.jpg',
+    image: '/images/hero3.webp',
     caption:
       'Мы здесь, чтобы оказать вам консультацию экономиста и помочь вам развивать свой бизнес',
     helpCaption: 'Получить помощь экономиста',
-    link: '/',
+    type: 2,
   },
   {
-    image: '/images/hero4.jpg',
+    image: '/images/hero4.webp',
     caption:
       'Мы здесь, чтобы оказать вам бухгалтерскую консультацию и обеспечить ваше финансовое благополучие',
     helpCaption: 'Получить помощь бухгалтера',
-    link: '/',
+    type: 3,
   },
 ]
 
 const Hero = () => {
+  const [isActiveModal, setIsActiveModal] = useState(false)
+  const [selectType, setSelectType] = useState(0)
+
   return (
     <>
       <section id="Hero">
@@ -73,12 +77,15 @@ const Hero = () => {
                       <h1 className="text-6xl uppercase md:text-8xl">LegaLex</h1>
                       <div className="mt-8 flex flex-col gap-4">
                         <span className="text-4xl md:text-6xl">{hero.caption}</span>
-                        <Link
-                          to={hero.link}
+                        <button
+                          onClick={() => {
+                            setIsActiveModal(!isActiveModal)
+                            setSelectType(hero.type)
+                          }}
                           className="mt-4 w-fit border-2 border-white bg-blue_dark/40 px-4 py-3 text-lg transition-all duration-300 hover:border-blue_light"
                         >
                           {hero.helpCaption}
-                        </Link>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -87,6 +94,16 @@ const Hero = () => {
             )
           })}
         </Swiper>
+        <Modal
+          isOpen={isActiveModal}
+          setIsOpen={setIsActiveModal}
+          onClose={() => {
+            setIsActiveModal(false)
+          }}
+          isSize={true}
+        >
+          <Form selectService={selectType} />
+        </Modal>
       </section>
     </>
   )

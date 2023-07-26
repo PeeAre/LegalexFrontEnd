@@ -4,22 +4,22 @@ import ServiceCard from './ServiceCard'
 const list = [
   {
     id: 'legal',
-    preview_image: '/images/service1.jpg',
+    preview_image: '/images/service1.webp',
     caption: 'Юридические услуги',
   },
   {
     id: 'hr',
-    preview_image: '/images/service2.jpg',
+    preview_image: '/images/service2.webp',
     caption: 'HR-услуги',
   },
   {
     id: 'economy',
-    preview_image: '/images/service3.jpeg',
+    preview_image: '/images/service3.webp',
     caption: 'Услуги экономиста',
   },
   {
     id: 'accounting',
-    preview_image: '/images/service4.jpg',
+    preview_image: '/images/service4.webp',
     caption: 'Бухгалтерские услуги',
   },
 ]
