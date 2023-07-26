@@ -51,9 +51,9 @@ const Hero = () => {
             clickableClass: 'pagination',
           }}
           color={'text-blue_light'}
-          speed={1000}
+          speed={2000}
           autoplay={{
-            delay: 5000,
+            delay: 8000,
             disableOnInteraction: false,
           }}
           loop={true}

@@ -9,16 +9,38 @@ const Template = ({ children }: ITemplate) => {
   const location = useLocation()
 
   useEffect(() => {
-    location.hash === ''
+    console.log(window.innerHeight)
+
+    location.pathname !== '/'
       ? window.scrollTo({
+          behavior: 'smooth',
+          top: window.innerHeight - 94,
+        })
+      : location.hash !== ''
+      ? document.getElementById(location.hash.replace('#', ''))?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
+      : window.scrollTo({
           top: 0,
           left: 0,
           behavior: 'smooth',
         })
-      : document.getElementById(location.hash.replace('#', ''))?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-        })
+    // location.hash !== ''
+    //   ? document.getElementById(location.hash.replace('#', ''))?.scrollIntoView({
+    //       behavior: 'smooth',
+    //       block: 'start',
+    //     })
+    //   : location.pathname !== '/'
+    //   ? document.getElementsByTagName('section')[0].scrollIntoView({
+    //       behavior: 'smooth',
+    //       block: 'start',
+    //     })
+    //   : window.scrollTo({
+    //       top: 0,
+    //       left: 0,
+    //       behavior: 'smooth',
+    //     })
   })
 
   return <>{children}</>

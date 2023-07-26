@@ -3,7 +3,7 @@ import React from 'react'
 const cast = [
   {
     link: '/documents/License.pdf',
-    name: 'Лицензия',
+    name: 'Наша лицензия',
     icon: '/images/graduation-scroll.png',
   },
   {

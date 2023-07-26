@@ -43,7 +43,7 @@ const Contacts = () => {
               </h3>
             </div>
             <div className="mt-16">
-              <div className="grid gap-4 md:gap-8 lg:grid-cols-3 lg:gap-12">
+              <div className="grid gap-4 md:gap-8 lg:grid-cols-3 lg:gap-12 text-black">
                 <div className="flex gap-4 lg:justify-center lg:gap-6">
                   <div className="relative z-[1] h-full max-h-[2.5rem] min-h-[2.5rem] w-full max-w-[2.5rem] bg-blue_light">
                     <img

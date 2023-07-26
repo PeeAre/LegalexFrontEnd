@@ -44,7 +44,7 @@ const Form = ({ selectService }: IForm) => {
       </Modal>
       <form
         ref={formRef}
-        className="grid gap-4 text-white lg:col-span-3 lg:grid-cols-4 lg:gap-8"
+        className="grid gap-4 lg:col-span-3 lg:grid-cols-4 lg:gap-8"
         id="ContactUsForm"
         onSubmit={(e) => {
           e.preventDefault()
@@ -71,7 +71,7 @@ const Form = ({ selectService }: IForm) => {
           onChange={(e) => {
             setIsLegal(e.currentTarget.selectedIndex == 0 ? true : false)
           }}
-          className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
+          className="border-2 text-white border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
         >
           <option value="1">Юридическое лицо</option>
           <option value="0">Физическое лицо</option>
@@ -80,7 +80,7 @@ const Form = ({ selectService }: IForm) => {
           id="service"
           required
           defaultValue={selectService}
-          className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
+          className="border-2 text-white border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
         >
           <option value="0">Не могу выбрать специалиста</option>
           <option value="1">Юридические услуги</option>
@@ -95,7 +95,7 @@ const Form = ({ selectService }: IForm) => {
             id="name"
             name="name"
             required
-            className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
+            className="border-2 text-white border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
           />
         ) : (
           <input
@@ -104,7 +104,7 @@ const Form = ({ selectService }: IForm) => {
             name="name"
             type="text"
             required
-            className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
+            className="border-2 text-white border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
           />
         )}
         <input
@@ -112,17 +112,17 @@ const Form = ({ selectService }: IForm) => {
           type="tel"
           id="phone"
           required
-          className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
+          className="border-2 text-white border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
         />
 
         <textarea
           placeholder="Опишите вашу проблему"
           id="message"
           required
-          className="min-h-[160px] border-2 border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90  invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:min-h-[320px] md:px-3 md:py-4 lg:col-span-4"
+          className="min-h-[160px] border-2 text-white border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90  invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:min-h-[320px] md:px-3 md:py-4 lg:col-span-4"
         />
         {!isLegal && (
-          <div className="flex gap-2 text-black lg:col-span-4">
+          <div className="flex gap-2 lg:col-span-4">
             <input type="checkbox" id="personaldata" name="personaldata" required />
             <label htmlFor="personaldata">
               Я ознакомлен с{' '}
@@ -140,7 +140,7 @@ const Form = ({ selectService }: IForm) => {
         )}
         <button
           type="submit"
-          className="w-full border-2 border-white bg-blue_dark/40 px-1 py-2 text-lg transition-all duration-300 hover:border-blue_light md:px-3 md:py-4 lg:col-span-4"
+          className="w-full border-2 text-white border-white bg-blue_dark/40 px-1 py-2 text-lg transition-all duration-300 hover:border-blue_light md:px-3 md:py-4 lg:col-span-4"
         >
           Свяжитесь со мной
         </button>
