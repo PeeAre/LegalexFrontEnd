@@ -27,15 +27,17 @@ jobs:
       - name: Clean ReactJS precache-manifest and logs
         uses: StephanThierry/ftp-delete-action@v2.1
         with:
-          host: ${{ secrets.test_server }}
+          host: ${{ secrets.server }}
           user: ${{ secrets.username }}
           password: ${{ secrets.password }}
+          workingDir: "~/dev.legalex.by"
           remoteFiles: "qwe.txt"
           ignoreSSL: "1"
         
       - name: Deploying application
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.test_server }}
+          server: ${{ secrets.server }}
           username: ${{ secrets.username }}
           password: ${{ secrets.password }}
+          destination-path: ~/dev.legalex.by/
