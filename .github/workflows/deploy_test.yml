@@ -24,6 +24,14 @@ jobs:
       - name: Building application
         run: CI='' npm run build
         
+      - name: Clean ReactJS precache-manifest and logs
+        uses: StephanThierry/ftp-delete-action@v2.1
+        with:
+          host: ${{ secrets.test_server }}
+          user: ${{ secrets.username }}
+          password: ${{ secrets.password }}
+          remoteFiles: "qwe.txt"
+        
       - name: Deploying application
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
