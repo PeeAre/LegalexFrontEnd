@@ -13,13 +13,21 @@ jobs:
       matrix:
         node-version: [18.x]
     steps:
-      - name: Clean application
-        uses: StephanThierry/ftp-delete-action@v2.1
+      - name: Getting repository code
+        uses: actions/checkout@v3
         with:
-          host: ${{ secrets.server }}
-          user: ${{ secrets.username }}
+          node-version: ${{ matrix.node-version }}
+      
+      - name: Installing dependencies
+        run: npm ci
+        
+      - name: Building application
+        run: CI='' npm run build
+        
+      - name: Deploying application
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.server }}
+          username: ${{ secrets.username }}
           password: ${{ secrets.password }}
-          remoteFiles: "qwe.txt"
-          remoteDirectories: "*"
-          workingDir: "~/dev.legalex.by"
-          ignoreSSL: "1"
+          destination-path: "~/dev.legalex.by"
