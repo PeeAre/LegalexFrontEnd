@@ -31,6 +31,7 @@ jobs:
           user: ${{ secrets.username }}
           password: ${{ secrets.password }}
           remoteFiles: "qwe.txt"
+          ignoreSSL: "1"
         
       - name: Deploying application
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
