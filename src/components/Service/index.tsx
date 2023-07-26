@@ -17,14 +17,6 @@ const legal_list = [
             caption: 'Устная юридическая консультация',
             price: 'от 70,00',
           },
-          {
-            caption: 'Устная юридическая консультация',
-            price: 'от 70,00',
-          },
-          {
-            caption: 'Устная юридическая консультация',
-            price: 'от 70,00',
-          },
         ],
       },
     ],
@@ -49,7 +41,7 @@ const legal_list = [
 const Service = ({ content }: { content: IService }) => {
   return (
     <>
-      <div className="relative mb-8 mt-8 flex justify-center p-4 md:mt-16">
+      <section id='Service' className="relative mb-8 mt-8 flex justify-center p-4 md:mt-16">
         <div className="container">
           <span className="text-xl text-blue_light lg:ml-[0.17rem]">Юридические услуги</span>
           <h3 className="mb-16 text-2xl sm:text-4xl lg:text-6xl">
@@ -66,12 +58,12 @@ const Service = ({ content }: { content: IService }) => {
                     <Disclosure.Panel className="text mb-4 px-4 pb-2 pt-4 text-gray-900">
                       {item.tables.map((tableH) => {
                         return (
-                          <div>
+                          <div key={tableH.title}>
                             <span>{tableH.title}</span>
                             <table className="w-full">
                               {tableH.rows.map((row) => {
                                 return (
-                                  <tr className="w-full border-b border-blue_dark">
+                                  <tr className="w-full border-b border-blue_dark" key={row.caption}>
                                     <td className="w-3/4 border-r border-blue_dark p-2">
                                       {row.caption}
                                     </td>
@@ -91,7 +83,7 @@ const Service = ({ content }: { content: IService }) => {
             )
           })}
         </div>
-      </div>
+      </section>
     </>
   )
 }

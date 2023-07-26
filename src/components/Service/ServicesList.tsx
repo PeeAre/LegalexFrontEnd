@@ -27,7 +27,7 @@ const list = [
 const ServicesList = () => {
   return (
     <>
-      <div className="relative mb-8 mt-8 flex justify-center p-4 md:mt-16">
+      <section id="Services" className="relative mb-8 mt-8 flex justify-center p-4 md:mt-16">
         <div className="container">
           <span className="text-xl text-blue_light lg:ml-[0.17rem]">Услуги</span>
           <h3 className="text-2xl sm:text-4xl lg:text-6xl">
@@ -41,7 +41,7 @@ const ServicesList = () => {
             })}
           </div>
         </div>
-      </div>
+      </section>
     </>
   )
 }
