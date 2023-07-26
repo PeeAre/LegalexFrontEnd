@@ -13,13 +13,12 @@ jobs:
       matrix:
         node-version: [18.x]
     steps:
-      - name: Clean ReactJS precache-manifest and logs
-        uses: StephanThierry/ftp-delete-action@v2.1
+      - uses: sebastianpopp/ftp-action@releases/v2
         with:
           host: ${{ secrets.server }}
           user: ${{ secrets.username }}
           password: ${{ secrets.password }}
-          workingDir: "/dev.legalex.by"
-          remoteDirectories: "/dev.legalex.by/*"
-          remoteFiles: "/dev.legalex.by/*"
-          ignoreSSL: "1"
+          remoteDir: "dev.legalex.by"
+          options: "rm -r wwwroot/"
+
+     
