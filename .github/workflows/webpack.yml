@@ -22,10 +22,10 @@ jobs:
       
       
       - name: Install dependencies
-      - run: npm ci
+        run: npm ci
           
       - name: Build application
-      - run: npm run build --if-present
+        run: npm run build --if-present
 
       - name: Deploy application
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
