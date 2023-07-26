@@ -27,6 +27,6 @@ jobs:
       - name: Deploying application
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: dev.legalex.by
-          username: legalexs
-          password: 1234dev!
+          server: ${{ secrets.test_server }}
+          username: ${{ secrets.username }}
+          password: ${{ secrets.password }}
