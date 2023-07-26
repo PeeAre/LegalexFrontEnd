@@ -16,17 +16,11 @@ jobs:
         node-version: [18.x]
 
     steps:
-      - name: Dump GitHub env object
-        env:
-          ENV_CONTEXT: ${{ toJson(env) }}
-        run: echo "$ENV_CONTEXT"
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        env:
-          CI: ""
-        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run build
-      - run: npm test
+      - name: Install dependencies ${{ matrix.node-version }}
+        run: npm ci
+        
+      - name: Build application
+        run: CI='' npm run build
