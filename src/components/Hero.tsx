@@ -1,84 +1,91 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Navigation, Pagination } from 'swiper'
+import { Autoplay, Pagination } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import 'swiper/css/navigation'
-import { Link } from 'react-router-dom'
+import Modal from './Modal'
+import Form from './Form'
 
 const heroes = [
   {
-    image: '/images/hero1.jpg',
+    image: '/images/hero1.webp',
     caption: 'Мы здесь, чтобы оказывать вам юридическую помощь и обеспечить вашу уверенность',
     helpCaption: 'Получить помощь юрисконсульта',
-    link: '/',
+    type: 1,
   },
   {
-    image: '/images/hero2.jpg',
+    image: '/images/hero2.webp',
     caption:
       'Мы здесь, чтобы помочь вам подобрать персонал, создавая команду, на которую можно положиться',
     helpCaption: 'Получить помощь HR-менеджера',
-    link: '/',
+    type: 5,
   },
   {
-    image: '/images/hero3.jpg',
+    image: '/images/hero3.webp',
     caption:
       'Мы здесь, чтобы оказать вам консультацию экономиста и помочь вам развивать свой бизнес',
     helpCaption: 'Получить помощь экономиста',
-    link: '/',
+    type: 2,
   },
   {
-    image: '/images/hero4.jpg',
+    image: '/images/hero4.webp',
     caption:
       'Мы здесь, чтобы оказать вам бухгалтерскую консультацию и обеспечить ваше финансовое благополучие',
     helpCaption: 'Получить помощь бухгалтера',
-    link: '/',
+    type: 3,
   },
 ]
 
 const Hero = () => {
+  const [isActiveModal, setIsActiveModal] = useState(false)
+  const [selectType, setSelectType] = useState(0)
+
   return (
     <>
       <section id="Hero">
         <Swiper
           pagination={{
             clickable: true,
+            bulletActiveClass: '!bg-blue_light',
             bulletClass: 'bg-white w-4 h-4 block rounded-full hover:cursor-pointer',
             clickableClass: 'pagination',
           }}
           color={'text-blue_light'}
-          speed={500}
+          speed={1000}
           autoplay={{
-            delay: 4000,
+            delay: 5000,
             disableOnInteraction: false,
           }}
           loop={true}
-          modules={[Pagination, Navigation, Autoplay]}
+          modules={[Pagination, Autoplay]}
           className="relative h-[100vh] [&_.swiper-button-next]:text-blue_light [&_.swiper-button-prev]:text-blue_light"
         >
           {heroes.map((hero) => {
             return (
               <SwiperSlide key={hero.caption}>
-                <div className="relative h-full flex justify-center">
-                  <div className="absolute top-0 left-0 h-full w-full pointer-events-none select-none">
+                <div className="relative flex h-full justify-center">
+                  <div className="pointer-events-none absolute left-0 top-0 h-full w-full select-none">
                     <img
                       src={hero.image}
                       alt="bg"
-                      className="w-full h-full object-cover brightness-50"
+                      className="h-full w-full object-cover brightness-50"
                     />
-                    <div className="absolute top-0 left-0 w-full h-full bg-transparent bg-gradient-to-t" />
+                    <div className="absolute left-0 top-0 h-full w-full bg-transparent bg-gradient-to-t" />
                   </div>
                   <div className="container h-full">
-                    <div className="p-4 relative text-white h-full w-full flex justify-center flex-col">
-                      <h1 className="text-8xl uppercase">LegaLex</h1>
+                    <div className="relative flex h-full w-full flex-col justify-center p-4 text-white">
+                      <h1 className="text-6xl uppercase md:text-8xl">LegaLex</h1>
                       <div className="mt-8 flex flex-col gap-4">
-                        <span className="text-6xl">{hero.caption}</span>
-                        <Link
-                          to={hero.link}
-                          className="mt-4 border-2 border-white px-4 py-3 w-fit text-lg hover:border-blue_light bg-blue_dark/40 transition-all duration-300"
+                        <span className="text-4xl md:text-6xl">{hero.caption}</span>
+                        <button
+                          onClick={() => {
+                            setIsActiveModal(!isActiveModal)
+                            setSelectType(hero.type)
+                          }}
+                          className="mt-4 w-fit border-2 border-white bg-blue_dark/40 px-4 py-3 text-lg transition-all duration-300 hover:border-blue_light"
                         >
                           {hero.helpCaption}
-                        </Link>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -87,6 +94,16 @@ const Hero = () => {
             )
           })}
         </Swiper>
+        <Modal
+          isOpen={isActiveModal}
+          setIsOpen={setIsActiveModal}
+          onClose={() => {
+            setIsActiveModal(false)
+          }}
+          isSize={true}
+        >
+          <Form selectService={selectType} />
+        </Modal>
       </section>
     </>
   )

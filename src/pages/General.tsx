@@ -8,7 +8,6 @@ import Pluses from '../components/Pluses'
 const General = () => {
   return (
     <>
-      <Hero />
       <Pluses />
       <About />
       <Documents />
