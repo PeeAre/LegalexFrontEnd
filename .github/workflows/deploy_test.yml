@@ -13,12 +13,13 @@ jobs:
       matrix:
         node-version: [18.x]
     steps:
-      - name: Deploying application
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Clean ReactJS precache-manifest and logs
+        uses: StephanThierry/ftp-delete-action@v2.1
         with:
-          server: ${{ secrets.server }}
-          username: ${{ secrets.username }}
+          host: ${{ secrets.server }}
+          user: ${{ secrets.username }}
           password: ${{ secrets.password }}
-          local-dir: ./build/
-          server-dir: dev.legalex.by/
+          workingDir: "/dev.legalex.by/"
+          remoteFiles: "/dev.legalex.by/*"
+          ignoreSSL: "1"
           options: "rmdir qwe/"
