@@ -20,6 +20,4 @@ jobs:
           user: ${{ secrets.username }}
           password: ${{ secrets.password }}
           workingDir: "/dev.legalex.by"
-          remoteFiles: "qwe.txt"
-          remoteDirectories: ""
           ignoreSSL: "1"
