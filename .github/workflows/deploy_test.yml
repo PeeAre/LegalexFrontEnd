@@ -40,4 +40,4 @@ jobs:
           server: ${{ secrets.server }}
           username: ${{ secrets.username }}
           password: ${{ secrets.password }}
-          destination-path: ~/dev.legalex.by/
+          destination-path: ~/dev.legalex.by
