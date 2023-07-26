@@ -22,6 +22,7 @@ jobs:
       
       - name: Build application
         run: |
+          npm init -y
           npm install
           npm run build
         
