@@ -1,4 +1,4 @@
-[Test branch deploying](https://github.com/PiratskiyTapok/LegalexFrontEnd/actions/workflows/PiratskiyTapok/LegalexFrontEnd/badge.svg)
+![Test branch deploying](https://github.com/PiratskiyTapok/LegalexFrontEnd/actions/workflows/test_deploying.yml/badge.svg)
 
 # Getting Started with Create React App
 
