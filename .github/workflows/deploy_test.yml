@@ -1,4 +1,4 @@
-name: DeployTestApplication
+name: Deploy Test Application
 
 on:
   push:
@@ -13,13 +13,23 @@ jobs:
       matrix:
         node-version: [18.x]
     steps:
-      - name: Clean ReactJS precache-manifest and logs
-        uses: StephanThierry/ftp-delete-action@v2.1
+      - name: Getting repository code
+        uses: actions/checkout@v3
         with:
-          host: ${{ secrets.server }}
-          user: ${{ secrets.username }}
+          node-version: ${{ matrix.node-version }}
+      
+      - name: Installing dependencies
+        run: npm ci
+        
+      - name: Building application
+        run: CI='' npm run build
+        
+      - name: Deploying application
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.server }}
+          username: ${{ secrets.username }}
           password: ${{ secrets.password }}
-          workingDir: "/dev.legalex.by/"
-          remoteFiles: "/dev.legalex.by/*"
-          remoteDirectories: "/dev.legalex.by/*"
-          ignoreSSL: "1"
+          local-dir: ./build/
+          server-dir: dev.legalex.by/
+          dangerous-clean-slate: true
