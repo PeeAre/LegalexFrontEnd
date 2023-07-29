@@ -5,8 +5,6 @@ on:
     branches: [ test ]
   pull_request:
     branches: [ test ]
-env:
-  VAR: 42
 
 jobs:
   deploy:
@@ -19,14 +17,14 @@ jobs:
         uses: actions/checkout@v3
         with:
           node-version: ${{ matrix.node-version }}
-      
+
       - name: Installing dependencies
         run: npm ci
         
       - name: Building application
         run: CI='' npm run build
         
-      - name: Deploying application
+      - name: Deployment application
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.server }}
@@ -35,13 +33,3 @@ jobs:
           local-dir: ./build/
           server-dir: dev.legalex.by/
           dangerous-clean-slate: true
-      
-      - name: Create Awesome Badge
-        uses: schneegans/dynamic-badges-action@v1.6.0
-        with:
-          auth: ${{ secrets.gist_secret }}
-          gistID: 9ac2c92231b07e6fd47f77064cc8a7b5
-          filename: color_badge_0.json
-          label: coverage
-          message: 0%
-          color: red
