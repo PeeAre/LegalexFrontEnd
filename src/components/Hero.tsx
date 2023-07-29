@@ -60,7 +60,7 @@ const Hero = () => {
           loop={true}
           navigation={true}
           modules={[Pagination, Autoplay, Navigation]}
-          className="relative h-[100vh] [&_.swiper-button-next]:top-[85%] [&_.swiper-button-next]:text-white [&_.swiper-button-next]:sm:top-[50%] [&_.swiper-button-prev]:top-[85%] [&_.swiper-button-prev]:text-white [&_.swiper-button-prev]:sm:top-[50%]"
+          className="relative h-[100vh] [&_.swiper-button-next]:bottom-[5%] [&_.swiper-button-next]:top-[unset] [&_.swiper-button-next]:text-white [&_.swiper-button-next]:sm:bottom-[50%] [&_.swiper-button-prev]:bottom-[5%] [&_.swiper-button-prev]:top-[unset] [&_.swiper-button-prev]:text-white [&_.swiper-button-prev]:sm:bottom-[50%]"
         >
           {heroes.map((hero) => {
             return (
