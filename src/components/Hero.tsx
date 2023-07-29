@@ -71,7 +71,6 @@ const Hero = () => {
                       src={hero.image}
                       alt="bg"
                       className="h-full w-full object-cover brightness-50"
-                      loading="lazy"
                     />
                     <div className="absolute left-0 top-0 h-full w-full bg-transparent bg-gradient-to-t" />
                   </div>
