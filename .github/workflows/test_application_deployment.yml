@@ -19,8 +19,5 @@ jobs:
           password: ${{ secrets.password }}
           server-dir: dev.legalex.by/
           exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            web.config
+            "web.config"
           dangerous-clean-slate: true
