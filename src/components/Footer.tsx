@@ -7,8 +7,8 @@ const Footer = () => {
     <>
       <footer className="relative flex justify-center bg-blue_dark bg-contain bg-bottom bg-no-repeat object-center p-2 py-8 text-white lg:px-4 lg:py-16">
         <div className="container">
-          <div className="grid sm:grid-cols-4 gap-4 md:grid-cols-3">
-            <div className="sm:col-span-4 flex flex-col items-center gap-4 md:col-span-1 md:items-start">
+          <div className="grid gap-4 sm:grid-cols-4 md:grid-cols-3">
+            <div className="flex flex-col items-center gap-4 sm:col-span-4 md:col-span-1 md:items-start">
               <Link to={'/'} className="flex items-center gap-4">
                 <img src="/images/logo-white.png" alt="Legalex" className="h-14 w-14" />
                 <div className="flex flex-col">
@@ -16,13 +16,13 @@ const Footer = () => {
                   <span className="text-sm lg:text-base">Юридическая фирма</span>
                 </div>
               </Link>
-              <span className="text-center text-lg text-white/80 md:text-start">
+              <span className="text-center text-white/80 md:text-start">
                 LegaLex - Ваш комплексный партнер в юриспруденции, финансах и управлении персоналом.
               </span>
-            </div>  
-            <div className="sm:col-span-2 md:col-span-1 w-fit mx-auto">
+            </div>
+            <div className="mx-auto w-fit sm:col-span-2 md:col-span-1">
               <span className="text-2xl">Офисная информация</span>
-              <div className="flex flex-col gap-2 text-white/80 md:text-lg">
+              <div className="flex flex-col gap-2 text-white/80">
                 <div className="mt-4 flex items-center gap-2">
                   <img src={'/images/phone.png'} className="h-6 w-6" alt="icon-document" />
                   <a
@@ -43,7 +43,9 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <img src={'/images/location.png'} className="h-6 w-6" alt="icon-document" />
-                  <span className="">г.Минск, улица Передовая 15, <br /> помещение 1, офис 16 Г</span>
+                  <span className="">
+                    г.Минск, улица Передовая 15, <br /> помещение 1, офис 16 Г
+                  </span>
                 </div>
                 <div className="flex items-start gap-2">
                   <img src={'/images/calendar.png'} className="h-6 w-6" alt="icon-document" />
@@ -66,9 +68,9 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="sm:col-span-2 flex flex-col md:col-span-1 w-fit mx-auto">
+            <div className="mx-auto flex w-fit flex-col sm:col-span-2 md:col-span-1">
               <span className="text-2xl">Полезные ссылки</span>
-              <div className="flex flex-col text-lg text-white/80">
+              <div className="flex flex-col text-white/80">
                 <Link to="/services" className="mt-4 hover:text-white">
                   Услуги
                 </Link>
