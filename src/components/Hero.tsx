@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination } from 'swiper'
+import { Autoplay, Navigation, Pagination } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 import Modal from './Modal'
 import Form from './Form'
 
@@ -57,8 +58,9 @@ const Hero = () => {
             disableOnInteraction: false,
           }}
           loop={true}
-          modules={[Pagination, Autoplay]}
-          className="relative h-[100vh] [&_.swiper-button-next]:text-blue_light [&_.swiper-button-prev]:text-blue_light"
+          navigation={true}
+          modules={[Pagination, Autoplay, Navigation]}
+          className="relative h-[100vh] [&_.swiper-button-next]:bottom-[5%] [&_.swiper-button-next]:top-[unset] [&_.swiper-button-next]:text-white [&_.swiper-button-next]:sm:bottom-[50%] [&_.swiper-button-prev]:bottom-[5%] [&_.swiper-button-prev]:top-[unset] [&_.swiper-button-prev]:text-white [&_.swiper-button-prev]:sm:bottom-[50%]"
         >
           {heroes.map((hero) => {
             return (

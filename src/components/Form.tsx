@@ -8,14 +8,14 @@ export interface IForm {
 }
 
 const Form = ({ selectService }: IForm) => {
-  const [sendFeedback, { isLoading, isError, isSuccess }] = useSendFeedbackMutation()
+  const [sendFeedback, { isError, isSuccess }] = useSendFeedbackMutation()
   const [isLegal, setIsLegal] = useState(true)
   const [isActiveSendModal, setIsActiveSendModal] = useState(false)
   const formRef = useRef<HTMLFormElement>(null)
 
   useEffect(() => {
     if (isError || isSuccess) {
-      setIsActiveSendModal(!isActiveSendModal)
+      setIsActiveSendModal((i) => !i)
       formRef?.current?.reset()
     }
   }, [isSuccess, isError])
@@ -68,10 +68,11 @@ const Form = ({ selectService }: IForm) => {
         <select
           id="type"
           required
+          onInvalid={(e) => e.currentTarget.classList.add('invalid:border-rose-500')}
           onChange={(e) => {
-            setIsLegal(e.currentTarget.selectedIndex == 0 ? true : false)
+            setIsLegal(e.currentTarget.selectedIndex === 0 ? true : false)
           }}
-          className="border-2 text-white border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
+          className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg text-white opacity-80 !outline-none placeholder:text-white/90 valid:border-blue_light hover:opacity-100 focus-visible:rounded-none active:opacity-100 md:px-3 md:py-4 lg:col-span-2"
         >
           <option value="1">Юридическое лицо</option>
           <option value="0">Физическое лицо</option>
@@ -80,7 +81,8 @@ const Form = ({ selectService }: IForm) => {
           id="service"
           required
           defaultValue={selectService}
-          className="border-2 text-white border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
+          onInvalid={(e) => e.currentTarget.classList.add('invalid:border-rose-500')}
+          className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg text-white opacity-80 !outline-none placeholder:text-white/90 valid:border-blue_light hover:opacity-100 focus-visible:rounded-none active:opacity-100 md:px-3 md:py-4 lg:col-span-2"
         >
           <option value="0">Не могу выбрать специалиста</option>
           <option value="1">Юридические услуги</option>
@@ -94,32 +96,36 @@ const Form = ({ selectService }: IForm) => {
             placeholder="Название юридического лица"
             id="name"
             name="name"
+            onInvalid={(e) => e.currentTarget.classList.add('invalid:border-rose-500')}
             required
-            className="border-2 text-white border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
+            className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg text-white opacity-80 !outline-none placeholder:text-white/90 valid:border-blue_light hover:opacity-100 focus-visible:rounded-none active:opacity-100 md:px-3 md:py-4 lg:col-span-2"
           />
         ) : (
           <input
             placeholder="Имя"
             id="name"
             name="name"
+            onInvalid={(e) => e.currentTarget.classList.add('invalid:border-rose-500')}
             type="text"
             required
-            className="border-2 text-white border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
+            className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg text-white opacity-80 !outline-none placeholder:text-white/90 valid:border-blue_light hover:opacity-100 focus-visible:rounded-none active:opacity-100 md:px-3 md:py-4 lg:col-span-2"
           />
         )}
         <input
           placeholder="Телефон"
           type="tel"
           id="phone"
+          onInvalid={(e) => e.currentTarget.classList.add('invalid:border-rose-500')}
           required
-          className="border-2 text-white border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
+          className="border-2 border-white bg-blue_light/40 px-1 py-2 text-lg text-white opacity-80 !outline-none placeholder:text-white/90 valid:border-blue_light hover:opacity-100 focus-visible:rounded-none active:opacity-100 md:px-3 md:py-4 lg:col-span-2"
         />
 
         <textarea
           placeholder="Опишите вашу проблему"
           id="message"
+          onInvalid={(e) => e.currentTarget.classList.add('invalid:border-rose-500')}
           required
-          className="min-h-[160px] border-2 text-white border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90  invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:min-h-[320px] md:px-3 md:py-4 lg:col-span-4"
+          className="min-h-[160px] border-2 border-white bg-blue_light/40 px-1 py-2 text-lg text-white opacity-80 !outline-none  placeholder:text-white/90 valid:border-blue_light hover:opacity-100 focus-visible:rounded-none active:opacity-100 md:min-h-[320px] md:px-3 md:py-4 lg:col-span-4"
         />
         {!isLegal && (
           <div className="flex gap-2 lg:col-span-4">
@@ -140,7 +146,7 @@ const Form = ({ selectService }: IForm) => {
         )}
         <button
           type="submit"
-          className="w-full border-2 text-white border-white bg-blue_dark/40 px-1 py-2 text-lg transition-all duration-300 hover:border-blue_light md:px-3 md:py-4 lg:col-span-4"
+          className="w-full border-2 border-white bg-blue_dark/40 px-1 py-2 text-lg text-white transition-all duration-300 hover:border-blue_light md:px-3 md:py-4 lg:col-span-4"
         >
           Свяжитесь со мной
         </button>

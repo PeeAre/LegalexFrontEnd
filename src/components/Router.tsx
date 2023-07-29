@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import General from '../pages/General'
 import Services from '../pages/Services'
+import Footer from './Footer'
 import Header from './Header'
 import Hero from './Hero'
 import Template from './Template'
@@ -48,6 +49,7 @@ const Router = () => {
           )
         })}
       </Routes>
+      <Footer />
     </>
   )
 }

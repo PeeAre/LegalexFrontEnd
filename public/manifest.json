@@ -1,9 +1,9 @@
 {
   "short_name": "LegaLex",
-  "name": "LegaLex",
+  "name": "LegaLex — комплексные юридические решения для вас",
   "icons": [
     {
-      "src": "fav.jpg",
+      "src": "fav.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
