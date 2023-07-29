@@ -11,18 +11,7 @@ jobs:
       matrix:
         node-version: [18.x]
     steps:
-      - name: Getting repository code
-        uses: actions/checkout@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Installing dependencies
-        run: npm ci
-        
-      - name: Building application
-        run: CI='' npm run build
-        
-      - name: Deployment application
+      - name: Deleted files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.server }}
@@ -30,5 +19,6 @@ jobs:
           password: ${{ secrets.password }}
           local-dir: ./build/
           server-dir: dev.legalex.by/
-          exclude: "web.config"
+          exclude: |
+            web.config
           dangerous-clean-slate: true
