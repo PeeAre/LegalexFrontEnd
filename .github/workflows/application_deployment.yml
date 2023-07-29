@@ -1,0 +1,35 @@
+name: Application deployment
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - name: Getting repository code
+        uses: actions/checkout@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      
+      - name: Installing dependencies
+        run: npm ci
+        
+      - name: Building application
+        run: CI='' npm run build
+        
+      - name: Deployment application
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.server }}
+          username: ${{ secrets.username }}
+          password: ${{ secrets.password }}
+          local-dir: ./build/
+          server-dir: legalex.by/
+          dangerous-clean-slate: true
