@@ -60,7 +60,7 @@ const Hero = () => {
           loop={true}
           navigation={true}
           modules={[Pagination, Autoplay, Navigation]}
-          className="relative h-[100vh] [&_.swiper-button-next]:top-[85%] [&_.swiper-button-next]:sm:top-[50%] [&_.swiper-button-next]:text-white [&_.swiper-button-prev]:top-[85%] [&_.swiper-button-prev]:sm:top-[50%] [&_.swiper-button-prev]:text-white"
+          className="relative h-[100vh] [&_.swiper-button-next]:top-[85%] [&_.swiper-button-next]:text-white [&_.swiper-button-next]:sm:top-[50%] [&_.swiper-button-prev]:top-[85%] [&_.swiper-button-prev]:text-white [&_.swiper-button-prev]:sm:top-[50%]"
         >
           {heroes.map((hero) => {
             return (
@@ -71,6 +71,7 @@ const Hero = () => {
                       src={hero.image}
                       alt="bg"
                       className="h-full w-full object-cover brightness-50"
+                      loading="lazy"
                     />
                     <div className="absolute left-0 top-0 h-full w-full bg-transparent bg-gradient-to-t" />
                   </div>

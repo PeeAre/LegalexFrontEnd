@@ -50,6 +50,7 @@ const About = () => {
                         src={image}
                         alt={name}
                         className="pointer-events-none h-full w-full select-none object-cover"
+                        loading="lazy"
                       />
                     </div>
                     <div className="relative -top-16 flex h-full max-h-[6rem] w-[calc(100%_-_2rem)] flex-col gap-2 bg-white p-4 shadow-md">
