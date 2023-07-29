@@ -62,27 +62,29 @@ const Service = ({ content }: { content: IService }) => {
                           <div key={tableH.title}>
                             <span className="font-medium">{tableH.title}</span>
                             <table className="mb-2 w-full">
-                              {tableH.rows.map((row, index) => {
-                                return (
-                                  <tr
-                                    className="w-full border-b border-blue_dark"
-                                    key={row.caption}
-                                  >
-                                    {row.caption && (
-                                      <td
-                                        className="w-3/4 border-r border-blue_dark p-2"
-                                        dangerouslySetInnerHTML={{ __html: row.caption! }}
-                                        rowSpan={
-                                          tableH.rows[index + 1]?.caption === ''
-                                            ? tableH.rows.length
-                                            : 1
-                                        }
-                                      />
-                                    )}
-                                    <td className="w-1/4 p-2">{row.price}</td>
-                                  </tr>
-                                )
-                              })}
+                              <tbody>
+                                {tableH.rows.map((row, index) => {
+                                  return (
+                                    <tr
+                                      className="w-full border-b border-blue_dark"
+                                      key={row.caption + index}
+                                    >
+                                      {row.caption && (
+                                        <td
+                                          className="w-3/4 border-r border-blue_dark p-2"
+                                          dangerouslySetInnerHTML={{ __html: row.caption! }}
+                                          rowSpan={
+                                            tableH.rows[index + 1]?.caption === ''
+                                              ? tableH.rows.length
+                                              : 1
+                                          }
+                                        />
+                                      )}
+                                      <td className="w-1/4 p-2">{row.price}</td>
+                                    </tr>
+                                  )
+                                })}
+                              </tbody>
                             </table>
                           </div>
                         )

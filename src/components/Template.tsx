@@ -9,8 +9,6 @@ const Template = ({ children }: ITemplate) => {
   const location = useLocation()
 
   useEffect(() => {
-    console.log(window.innerHeight)
-
     location.pathname !== '/'
       ? window.scrollTo({
           behavior: 'smooth',
