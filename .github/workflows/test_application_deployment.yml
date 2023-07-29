@@ -30,7 +30,4 @@ jobs:
           password: ${{ secrets.password }}
           local-dir: ./build/
           server-dir: dev.legalex.by/
-          exclude: |
-            test.txt
-            test2.txt
           dangerous-clean-slate: true
