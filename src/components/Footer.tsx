@@ -24,7 +24,7 @@ const Footer = () => {
               <span className="text-2xl">Офисная информация</span>
               <div className="flex flex-col gap-2 text-white/80">
                 <div className="mt-4 flex items-center gap-2">
-                  <img src={'/images/phone.png'} className="h-6 w-6" alt="icon-document" />
+                  <img src={'/images/phone.png'} className="h-5 w-5" alt="icon-document" />
                   <a
                     href="tel:+375 (44) 790-55-25"
                     className="underline-offset-2 hover:text-white hover:underline"
@@ -33,7 +33,7 @@ const Footer = () => {
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
-                  <img src={'/images/message.png'} className="h-6 w-6" alt="icon-document" />
+                  <img src={'/images/message.png'} className="h-5 w-5" alt="icon-document" />
                   <a
                     href="mailto:office.legalex@gmail.com"
                     className="underline-offset-2 hover:text-white hover:underline"
@@ -42,13 +42,13 @@ const Footer = () => {
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
-                  <img src={'/images/location.png'} className="h-6 w-6" alt="icon-document" />
+                  <img src={'/images/location.png'} className="h-5 w-5" alt="icon-document" />
                   <span className="">
                     г.Минск, улица Передовая 15, <br /> помещение 1, офис 16 Г
                   </span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <img src={'/images/calendar.png'} className="h-6 w-6" alt="icon-document" />
+                  <img src={'/images/calendar.png'} className="h-5 w-5" alt="icon-document" />
                   <div className="flex flex-col">
                     <span>
                       <b>Понедельник-пятница:</b>
