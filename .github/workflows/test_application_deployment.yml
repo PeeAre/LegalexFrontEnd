@@ -19,5 +19,5 @@ jobs:
           password: ${{ secrets.password }}
           server-dir: dev.legalex.by/
           exclude: |
-            web.config
+            dev.legalex.by/web.config
           dangerous-clean-slate: true
