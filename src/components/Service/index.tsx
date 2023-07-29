@@ -1,4 +1,5 @@
 import { Disclosure } from '@headlessui/react'
+import clsx from 'clsx'
 import React from 'react'
 import { getService } from '../../libs/utils/get-service'
 
@@ -22,7 +23,12 @@ const Service = ({ content }: { content: IService }) => {
               <Disclosure key={item.caption} defaultOpen={index === 0}>
                 {({ open }) => (
                   <>
-                    <Disclosure.Button className="mb-2 flex w-full justify-between bg-blue_dark/60 px-4 py-2 text-left text-lg text-white hover:bg-blue_dark focus:outline-none">
+                    <Disclosure.Button
+                      className={clsx(
+                        open ? 'bg-blue_dark hover:bg-blue_dark/60' : 'hover:bg-blue_dark bg-blue_dark/60',
+                        'mb-2 flex w-full justify-between px-4 py-2 text-left text-lg text-white focus:outline-none transition-all duration-300'
+                      )}
+                    >
                       <span>{item.caption}</span>
                       {open ? (
                         <svg
