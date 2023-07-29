@@ -1,5 +1,5 @@
-![GitHub Test branch deployment](https://img.shields.io/github/actions/workflow/status/PiratskiyTapok/LegalexFrontEnd/test_application_deployment.yml?event=push&style=flat-square&label=Test%20deployment)
-![Test branch deployment](https://github.com/PiratskiyTapok/LegalexFrontEnd/actions/workflows/test_application_deployment.yml/badge.svg?branch=test)
+![Main deployment](https://img.shields.io/github/actions/workflow/status/PiratskiyTapok/LegalexFrontEnd/application_deployment.yml?style=for-the-badge&label=Main%20deployment)
+![Test deployment](https://img.shields.io/github/actions/workflow/status/PiratskiyTapok/LegalexFrontEnd/test_application_deployment.yml?style=for-the-badge&label=Test%20deployment)
 
 # Getting Started with Create React App
 
