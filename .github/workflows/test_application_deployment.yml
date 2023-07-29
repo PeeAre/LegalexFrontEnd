@@ -29,5 +29,5 @@ jobs:
           username: ${{ secrets.username }}
           password: ${{ secrets.password }}
           local-dir: ./build/
-          server-dir: dev.legalex.by/
+          server-dir: "web.config"
           dangerous-clean-slate: true
