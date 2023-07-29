@@ -17,7 +17,6 @@ jobs:
           server: ${{ secrets.server }}
           username: ${{ secrets.username }}
           password: ${{ secrets.password }}
-          local-dir: ./build/
           server-dir: dev.legalex.by/
           exclude: |
             web.config
