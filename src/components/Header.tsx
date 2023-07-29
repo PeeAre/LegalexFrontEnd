@@ -172,6 +172,8 @@ const Header = () => {
                       location.pathname === '/' &&
                         link.link.includes('#') &&
                         handleAnchorLink(link.link)
+
+                      setIsActiveMenu((e) => !e)
                     }}
                     className="border-b-2 border-transparent transition-all hover:border-blue_light"
                   >
