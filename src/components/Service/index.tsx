@@ -1,6 +1,7 @@
 import { Disclosure } from '@headlessui/react'
 import clsx from 'clsx'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { getService } from '../../libs/utils/get-service'
 
 export interface IService {
@@ -12,7 +13,13 @@ const Service = ({ content }: { content: IService }) => {
   return (
     <>
       <section id="Service" className="relative mb-8 mt-8 flex justify-center p-4 md:mt-16">
-        <div className="container">
+        <div className="container relative">
+          <Link
+            to="/services"
+            className="absolute -top-16 right-0 mt-4 w-fit border-2 border-white text-white bg-blue_dark/80 px-2 py-1 text-lg transition-all duration-300 hover:border-blue_light"
+          >
+            Вернуться к списку услуг
+          </Link>
           <span className="text-xl text-blue_light lg:ml-[0.17rem]">{service_?.title}</span>
           <h3
             className="mb-16 text-2xl sm:text-4xl lg:text-6xl"
@@ -25,8 +32,10 @@ const Service = ({ content }: { content: IService }) => {
                   <>
                     <Disclosure.Button
                       className={clsx(
-                        open ? 'bg-blue_dark hover:bg-blue_dark/60' : 'hover:bg-blue_dark bg-blue_dark/60',
-                        'mb-2 flex w-full justify-between px-4 py-2 text-left text-lg text-white focus:outline-none transition-all duration-300'
+                        open
+                          ? 'bg-blue_dark hover:bg-blue_dark/60'
+                          : 'bg-blue_dark/60 hover:bg-blue_dark',
+                        'mb-2 flex w-full justify-between px-4 py-2 text-left text-lg text-white transition-all duration-300 focus:outline-none'
                       )}
                     >
                       <span>{item.caption}</span>
