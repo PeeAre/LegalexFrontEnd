@@ -8,14 +8,14 @@ export interface IForm {
 }
 
 const Form = ({ selectService }: IForm) => {
-  const [sendFeedback, { isLoading, isError, isSuccess }] = useSendFeedbackMutation()
+  const [sendFeedback, { isError, isSuccess }] = useSendFeedbackMutation()
   const [isLegal, setIsLegal] = useState(true)
   const [isActiveSendModal, setIsActiveSendModal] = useState(false)
   const formRef = useRef<HTMLFormElement>(null)
 
   useEffect(() => {
     if (isError || isSuccess) {
-      setIsActiveSendModal(!isActiveSendModal)
+      setIsActiveSendModal(i => !i)
       formRef?.current?.reset()
     }
   }, [isSuccess, isError])
@@ -69,7 +69,7 @@ const Form = ({ selectService }: IForm) => {
           id="type"
           required
           onChange={(e) => {
-            setIsLegal(e.currentTarget.selectedIndex == 0 ? true : false)
+            setIsLegal(e.currentTarget.selectedIndex === 0 ? true : false)
           }}
           className="border-2 text-white border-white bg-blue_light/40 px-1 py-2 text-lg !outline-none placeholder:text-white/90 invalid:border-red-400 hover:border-blue_light focus-visible:rounded-none focus-visible:border-blue_light md:px-3 md:py-4 lg:col-span-2"
         >

@@ -1,34 +1,6 @@
 import React from 'react'
 import Form from './Form'
 
-const cast = [
-  {
-    image: '/images/cast1.jpg',
-    name: 'Власенков Владислав',
-    job_title: 'Директор',
-  },
-  {
-    image: '/images/cast2.jpg',
-    name: 'Гришкова Ольга',
-    job_title: 'Юрисконсульт',
-  },
-  {
-    image: '/images/cast3.jpg',
-    name: 'Ковалёва Наталья',
-    job_title: 'Юрисконсульт 2-ой категории',
-  },
-  {
-    image: '/images/cast4.jpg',
-    name: 'Прихожая Екатерина',
-    job_title: 'HR-менеджер',
-  },
-  {
-    image: '/images/cast5.jpg',
-    name: 'Строич Мария',
-    job_title: 'Ведущий экономист',
-  },
-]
-
 const Contacts = () => {
   return (
     <>

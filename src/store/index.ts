@@ -1,4 +1,4 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 import { contactApi } from './web/contact.api'
 
 export const store = configureStore({
