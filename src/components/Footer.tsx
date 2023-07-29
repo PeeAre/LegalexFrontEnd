@@ -1,8 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { handleAnchorLink } from './Header'
 
 const Footer = () => {
+  const location = useLocation()
+
   return (
     <>
       <footer className="relative flex justify-center bg-blue_dark bg-contain bg-bottom bg-no-repeat object-center p-2 py-8 text-white lg:px-4 lg:py-16">
@@ -77,21 +79,21 @@ const Footer = () => {
                 <Link
                   to="/#About"
                   className="hover:text-white"
-                  onClick={() => handleAnchorLink('/#About')}
+                  onClick={() => location.pathname === '/' && handleAnchorLink('/#About')}
                 >
                   О нас
                 </Link>
                 <Link
                   to="/#Documents"
                   className="hover:text-white"
-                  onClick={() => handleAnchorLink('/#Documents')}
+                  onClick={() => location.pathname === '/' && handleAnchorLink('/#Documents')}
                 >
                   Документы
                 </Link>
                 <Link
                   to="/#ContactUs"
                   className="hover:text-white"
-                  onClick={() => handleAnchorLink('/#ContactUs')}
+                  onClick={() => location.pathname === '/' && handleAnchorLink('/#ContactUs')}
                 >
                   Связаться с нами
                 </Link>

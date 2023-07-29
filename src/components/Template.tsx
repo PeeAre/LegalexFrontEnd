@@ -12,16 +12,15 @@ const Template = ({ children }: ITemplate) => {
     location.pathname !== '/'
       ? window.scrollTo({
           behavior: 'smooth',
-          top: window.innerHeight - 94,
+          top: window.innerHeight - 88,
         })
       : location.hash !== ''
-      ? document.getElementById(location.hash.replace('#', ''))?.scrollIntoView({
+      ? window.scrollTo({
+          top: document.getElementById(location.hash.replace('#', ''))?.offsetTop! - 88,
           behavior: 'smooth',
-          block: 'start',
         })
       : window.scrollTo({
           top: 0,
-          left: 0,
           behavior: 'smooth',
         })
   })
@@ -30,3 +29,8 @@ const Template = ({ children }: ITemplate) => {
 }
 
 export default Template
+
+// document.getElementById(location.hash.replace('#', ''))?.scrollIntoView({
+//   behavior: 'smooth',
+//   block: 'start',
+// })
