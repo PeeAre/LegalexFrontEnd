@@ -762,6 +762,10 @@ video {
   height: 100%;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
 .max-h-\[2\.5rem\] {
   max-height: 2.5rem;
 }
@@ -1300,6 +1304,18 @@ video {
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.grayscale {
+  --tw-grayscale: grayscale(100%);
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.grayscale-\[50\%\] {
+  --tw-grayscale: grayscale(50%);
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .backdrop-blur-\[5px\] {
   --tw-backdrop-blur: blur(5px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
@@ -1758,20 +1774,12 @@ img {
   }
 }
 
-.\[\&_\.swiper-button-next\]\:top-\[85\%\] .swiper-button-next {
-  top: 85%;
+.\[\&_\.swiper-button-next\]\:bottom-\[5\%\] .swiper-button-next {
+  bottom: 5%;
 }
 
 .\[\&_\.swiper-button-next\]\:top-\[unset\] .swiper-button-next {
   top: unset;
-}
-
-.\[\&_\.swiper-button-next\]\:bottom-\[85\%\] .swiper-button-next {
-  bottom: 85%;
-}
-
-.\[\&_\.swiper-button-next\]\:bottom-\[5\%\] .swiper-button-next {
-  bottom: 5%;
 }
 
 .\[\&_\.swiper-button-next\]\:text-white .swiper-button-next {
@@ -1780,29 +1788,17 @@ img {
 }
 
 @media (min-width: 640px) {
-  .\[\&_\.swiper-button-next\]\:sm\:top-\[50\%\] .swiper-button-next {
-    top: 50%;
-  }
-
   .\[\&_\.swiper-button-next\]\:sm\:bottom-\[50\%\] .swiper-button-next {
     bottom: 50%;
   }
 }
 
-.\[\&_\.swiper-button-prev\]\:top-\[85\%\] .swiper-button-prev {
-  top: 85%;
+.\[\&_\.swiper-button-prev\]\:bottom-\[5\%\] .swiper-button-prev {
+  bottom: 5%;
 }
 
 .\[\&_\.swiper-button-prev\]\:top-\[unset\] .swiper-button-prev {
   top: unset;
-}
-
-.\[\&_\.swiper-button-prev\]\:bottom-\[85\%\] .swiper-button-prev {
-  bottom: 85%;
-}
-
-.\[\&_\.swiper-button-prev\]\:bottom-\[5\%\] .swiper-button-prev {
-  bottom: 5%;
 }
 
 .\[\&_\.swiper-button-prev\]\:text-white .swiper-button-prev {
@@ -1811,10 +1807,6 @@ img {
 }
 
 @media (min-width: 640px) {
-  .\[\&_\.swiper-button-prev\]\:sm\:top-\[50\%\] .swiper-button-prev {
-    top: 50%;
-  }
-
   .\[\&_\.swiper-button-prev\]\:sm\:bottom-\[50\%\] .swiper-button-prev {
     bottom: 50%;
   }
