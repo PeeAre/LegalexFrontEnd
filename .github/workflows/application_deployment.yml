@@ -15,14 +15,17 @@ jobs:
         uses: actions/checkout@v3
         with:
           node-version: ${{ matrix.node-version }}
-      
+
       - name: Installing dependencies
         run: npm ci
         
       - name: Building application
         run: CI='' npm run build
+      
+      - name: Web.config copying
+        run: cp ./web.config ./build/
         
-      - name: Deployment application
+      - name: Deploying application
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.server }}
