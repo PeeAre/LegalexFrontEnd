@@ -44,12 +44,12 @@ const Header = () => {
   const Contacts = () => {
     return (
       <div className="hidden flex-col items-center gap-1 lg:flex">
-        <a href="tel:+375 25 2525252" className="underline-offset-2 hover:underline">
-          +375(25)252-5252
+        <a href="tel:+375447905525" className="underline-offset-2 hover:underline">
+          +375 (44) 790-55-25
         </a>
         <div className="flex gap-2">
           <a
-            href="https://vladislavsavko.t.me"
+            href="https://t.me/Lega_Lex"
             target={'_blank'}
             rel="noreferrer"
             className="relative h-8 w-8 rounded-full border border-white hover:bg-blue_light/50"
@@ -61,7 +61,7 @@ const Header = () => {
             />
           </a>
           <a
-            href="viber://add?number=375252525252"
+            href="viber://chat?number=%2B375447905525"
             target={'_blank'}
             rel="noreferrer"
             className="relative h-8 w-8 rounded-full border border-white hover:bg-blue_light/50"
@@ -73,7 +73,7 @@ const Header = () => {
             />
           </a>
           <a
-            href="https://api.whatsapp.com/375252525252"
+            href="https://wa.me/375447905525"
             target={'_blank'}
             rel="noreferrer"
             className="relative h-8 w-8 rounded-full border border-white hover:bg-blue_light/50"
@@ -159,7 +159,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <Modal isOpen={isActiveMenu} setIsOpen={setIsActiveMenu} onClose={() => {}}>
+      <Modal isOpen={isActiveMenu} setIsOpen={setIsActiveMenu} onClose={() => { }}>
         <div className="container">
           <div className="flex flex-col items-center gap-2 pt-8 text-2xl text-white">
             {headers.map((link) => {
@@ -184,12 +184,12 @@ const Header = () => {
             })}
           </div>
           <div className="mt-8 flex flex-col items-center gap-1 text-white">
-            <a href="tel:+375 25 2525252" className="underline-offset-2 hover:underline">
-              +375(25)252-5252
+            <a href="tel:+375447905525" className="underline-offset-2 hover:underline">
+              +375 (44) 790-55-25
             </a>
             <div className="flex gap-2">
               <a
-                href="https://vladislavsavko.t.me"
+                href="https://t.me/Lega_Lex"
                 target={'_blank'}
                 rel="noreferrer"
                 className="relative h-8 w-8 rounded-full border border-white hover:bg-blue_light/50"
@@ -201,7 +201,7 @@ const Header = () => {
                 />
               </a>
               <a
-                href="viber://add?number=375252525252"
+                href="viber://chat?number=%2B375447905525"
                 target={'_blank'}
                 rel="noreferrer"
                 className="relative h-8 w-8 rounded-full border border-white hover:bg-blue_light/50"
@@ -213,7 +213,7 @@ const Header = () => {
                 />
               </a>
               <a
-                href="https://api.whatsapp.com/375252525252"
+                href="https://api.whatsapp.com/375447905525"
                 target={'_blank'}
                 rel="noreferrer"
                 className="relative h-8 w-8 rounded-full border border-white hover:bg-blue_light/50"

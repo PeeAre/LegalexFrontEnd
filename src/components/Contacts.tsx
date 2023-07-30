@@ -64,7 +64,7 @@ const Contacts = () => {
                     </div>
                     <span className="md:text-lg">
                       <a
-                        href="tel:+375 (44) 790-55-25"
+                        href="tel:+375447905525"
                         className="underline-offset-2 hover:underline"
                       >
                         +375 (44) 790-55-25
