@@ -28,7 +28,7 @@ const Footer = () => {
                 <div className="mt-4 flex items-center gap-2">
                   <img src={'/images/phone.png'} className="h-5 w-5" alt="icon-document" />
                   <a
-                    href="tel:+375 (44) 790-55-25"
+                    href="tel:+375447905525"
                     className="underline-offset-2 hover:text-white hover:underline"
                   >
                     +375 (44) 790-55-25
