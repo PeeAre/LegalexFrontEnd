@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import Router from './components/Router'
+import Router from './Router'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store } from './store'

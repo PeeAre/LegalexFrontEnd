@@ -21,4 +21,4 @@ export const webApi = createApi({
   }),
 })
 
-export const { useGetBannersQuery } = webApi
+export const { useGetBannersQuery, useLazyGetBannersQuery } = webApi

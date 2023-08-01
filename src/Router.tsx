@@ -1,11 +1,12 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import General from '../pages/General'
-import Services from '../pages/Services'
-import Footer from './Footer'
-import Header from './Header'
-import Hero from './Hero'
-import Template from './Template'
+import General from './pages/General'
+import Services from './pages/Services'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Template from './components/Template'
+import Login from './pages/Login'
 
 export interface IRoute {
   Component: any
@@ -26,6 +27,12 @@ const routes: IRoute[] = [
     title: 'Services',
     path: '/services/:slug?',
     url: '/services/',
+  },
+  {
+    Component: Login,
+    title: 'Login',
+    path: '/login',
+    url: '/login/',
   },
 ]
 
